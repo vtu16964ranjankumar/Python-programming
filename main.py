@@ -1,3 +1,4 @@
+# This program demonstrate the use of class and methods in python
 class Person:
     def __init__(self, name, address, telephone_number):
         self.name = name
