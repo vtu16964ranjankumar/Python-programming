@@ -1,50 +1,27 @@
-# This program demonstrate the use of class and methods in python
-class Person:
-    def __init__(self, name, address, telephone_number):
-        self.name = name
-        self.address = address
-        self.telephone_number = telephone_number
+import numpy as np
+import matplotlib.pyplot as plt
 
-class Customer(Person):
-    def __init__(self, name, address, telephone_number, customer_number, on_mailing_list):
-        # Call the constructor of the parent class (Person)
-        super().__init__(name, address, telephone_number)
-        
-        # Additional attributes specific to the Customer class
-        self.customer_number = customer_number
-        self.on_mailing_list = on_mailing_list
+# Given data
+x = np.array([0, 5, 10, 15, 20, 25])
+y = np.array([100, 111, 119, 132, 140, 151])
 
-# Demonstrate an instance of the Customer class
-if __name__ == "__main__":
-    # Creating a Customer instance with on_mailing_list set to True
-    customer1 = Customer(
-        name="John Doe",
-        address="123 Main St",
-        telephone_number="555-1234",
-        customer_number="C123456",
-        on_mailing_list=True
-    )
+# Perform linear regression using the least squares method
+coefficients = np.polyfit(x, y, 1)
+slope, intercept = coefficients
 
-    # Accessing attributes of the Customer instance
-    print("Customer Name:", customer1.name)
-    print("Customer Address:", customer1.address)
-    print("Customer Telephone Number:", customer1.telephone_number)
-    print("Customer Number:", customer1.customer_number)
-    print("On Mailing List:", customer1.on_mailing_list)
-print()
+# Generate y values for the best-fitting line
+y_fit = slope * x + intercept
 
-# Creating another Customer instance with on_mailing_list set to False
-customer2 = Customer(
-    name="Jane Smith",
-    address="456 Oak St",
-    telephone_number="555-5678",
-    customer_number="C789012",
-    on_mailing_list=False
-)
+# Plot the original data points and the best-fitting line
+plt.scatter(x, y, label='Data points')
+plt.plot(x, y_fit, color='red', label=f'Best-fitting line: y = {slope:.2f}x + {intercept:.2f}')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.legend()
+plt.grid(True)
+plt.title('best-fitting straight line using Least Squares Method')
+plt.show()
 
-# Accessing and printing attributes of the Customer instance
-print("Customer Name:", customer2.name)
-print("Customer Address:", customer2.address)
-print("Customer Telephone Number:", customer2.telephone_number)
-print("Customer Number:", customer2.customer_number)
-print("On Mailing List:", customer2.on_mailing_list)
+# Print the slope and y-intercept
+print(f"Slope (m): {slope}")
+print(f"Y-intercept (b): {intercept}")
