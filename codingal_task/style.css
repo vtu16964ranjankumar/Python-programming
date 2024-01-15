@@ -1,0 +1,33 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: rgba(12, 12, 27, 0.975);
+}
+.btn-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.btn{
+  padding: 10px 20px;
+  border: 1px solid #000;
+  background: #4769fd;
+  color: #fcfcfc;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+}
+btn:link,btn:active{
+  transition: all 0.3s ease;
+  background-color: greenyellow;
+}
+btn:hover,btn:focus{
+  transition: all 0.3s ease;
+  background-color: rgba(81, 241, 84, 0.789);
+}
