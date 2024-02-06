@@ -1,0 +1,10 @@
+Topic to revised
+- decimal, binary, octal, hexa.
+- left shift(<<) and right shift(>>)
+
+
+
+
+
+Things to revise once again
+- argv
