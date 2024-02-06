@@ -8,4 +8,3 @@ print('The addition of two number is',c)
 # 3. import a keyword
 import keyword
 print(keyword.kwlist)
-print("ravi")
