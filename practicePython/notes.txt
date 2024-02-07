@@ -8,3 +8,6 @@ Topic to revised
 
 Things to revise once again
 - argv
+
+Topic to focus
+- inBuilt string method 
